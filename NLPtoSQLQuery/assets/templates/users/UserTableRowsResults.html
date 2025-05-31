@@ -1,0 +1,53 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+
+{%block contents%}
+
+
+{% load static %}
+<div class="hero-wrap js-fullheight img" style="background-image: url({% static 'images/bg_1.jpg' %});">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-center">
+            <div class="col-md-10 d-flex align-items-center ftco-animate">
+                <div class="text w-100 text-center">
+                    <span class="subheading mb-2">Select the table and view the data columns and rows below</span>
+                    <h1 class="mb-4">Select the table in dropdown option</h1>
+
+                    <!-- Dropdown Form -->
+                    <form method="GET" action="">
+                        <select name="selected_table" onchange="this.form.submit()">
+                            <option value="">-- Select Table --</option>
+                            {% for table in tables %}
+                            <option value="{{ table }}" {% if table == selected_table %}selected{% endif %}>{{ table }}</option>
+                            {% endfor %}
+                        </select>
+                    </form>
+
+                    <!-- Display Table Data -->
+                    {% if selected_table %}
+                    <h2>Showing data from: {{ selected_table }}</h2>
+                    <table border="1" style="color:white; background-color: rgba(0,0,0,0.5); padding:10px; margin-top:10px;">
+                        <tr>
+                            {% for col in columns %}
+                            <th>{{ col }}</th>
+                            {% endfor %}
+                        </tr>
+                        {% for row in records %}
+                        <tr>
+                            {% for cell in row %}
+                            <td>{{ cell }}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{%endblock%}

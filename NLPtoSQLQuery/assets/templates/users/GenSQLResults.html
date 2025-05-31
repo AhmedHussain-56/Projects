@@ -1,0 +1,22 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+
+{%block contents%}
+<div class="hero-wrap js-fullheight img" style="background-image: url({%static 'images/bg_1.jpg'%});">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-center">
+				<div class="col-md-10 d-flex align-items-center ftco-animate">
+					<div class="text w-100 text-center">
+						<span class="subheading mb-2">First  Results</span>
+						<h1 class="mb-4">The Results <font style="color:RED">{{results}}</font></h1>
+                        <h2 class="mb-4">The columns   <font style="color:Yellow">{{columns}}%</font></h2>
+						SQL Query is <p class="mb-4">{{query}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{%endblock%}

@@ -1,0 +1,21 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+
+{%block contents%}
+<div class="hero-wrap js-fullheight img" style="background-image: url({%static 'images/bg_1.jpg'%});">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-center">
+				<div class="col-md-10 d-flex align-items-center ftco-animate">
+					<div class="text w-100 text-center">
+						<span class="subheading mb-2">Natural Language to SQL Query Conversion Using Transformer Models</span>
+						<h1 class="mb-4">Structured Query Language (SQL), NLP, LLM</h1>
+						<p class="mb-4">Structured Query Language (SQL) is essential for managing databases, but writing complex queries requires technical expertise. This project proposes a Natural Language to SQL Query Conversion System using Transformer-based models to bridge the gap between human language and database interaction. By leveraging pre-trained deep learning models like BERT and T5, the system can interpret user queries, generate SQL statements, and execute database operations efficiently. This approach enhances accessibility, allowing non-technical users to retrieve insights from databases using natural language.</p>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{%endblock%}

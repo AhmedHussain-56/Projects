@@ -1,0 +1,50 @@
+{%extends 'admins/adminbase.html'%}
+{%load static%}
+
+{%block contents%}
+<section class="ftco-section testimony-section img" style="background-image: url({%static 'images/bg_2.jpg'%});">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row justify-content-center mb-4">
+			<div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+				<span class="subheading">Our Promotors</span>
+				<div class="text w-100 text-center">
+						<span class="subheading mb-2">Search History</span>
+                        <center>
+                        <table border="2px" class="table table-hover table-dark">
+                    <thead>
+                    <tr class="table-danger">
+                        <th scope="col">S.No</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Natural Query</th>
+                        <th scope="col">Gen Sql Query</th>
+                        <th scope="col"> Date</th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in data %}
+                    <tr scope="row" style="color: BLUE; background-color:#FFFCBB">
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.username}}</td>
+                        <td>{{i.natural_query}}</td>
+                        <td>{{i.sql_query}}%</td>
+                        <td>{{i.created_at}}</td>
+
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                        </center>
+
+					</div>
+
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+{%endblock%}

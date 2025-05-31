@@ -1,0 +1,31 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+
+{%block contents%}
+<section class="ftco-section testimony-section img" style="background-image: url({% static 'images/bg_2.jpg' %});">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+                <span class="subheading">Database Tables</span>
+
+                <center>
+                    <table border="1" style="color:white; background-color: rgba(0,0,0,0.5); padding:10px;">
+                        <tr>
+                            <th>Table Name</th>
+                        </tr>
+                        {% for table in data %}
+                        <tr>
+                            <td>{{ table }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </center>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{%endblock%}
